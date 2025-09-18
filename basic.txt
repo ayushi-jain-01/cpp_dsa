@@ -1,0 +1,119 @@
+1. to run a cpp file
+g++ -o main basic.cpp
+.\main.exe
+
+2. whenever do any changes in the file run these commands to  update in the github
+git add .
+git commit -m "Added [topic/file name]"
+git push
+
+// string nd getline
+cin>>s (this will print only one word forex: s-ayushi jain o/p:-ayushi)
+getline(cin,s) (this will print whole sentence forex: s-ayushi jain o/p:-ayushi jain)
+
+//switch case 
+switch(input){
+    case 1:
+    cout<<..
+    break;
+    case2:
+    cout<<..
+    break;
+    default:
+    cout<<..
+}
+
+//arrays (1D)
+..used to store the multiple values in a single variable 
+..syntax: int arr[5]; (any dt)
+..negative indexing not there only positive
+..can change the value of an array
+eleemnts are stored in consecutive in the memory
+
+            int arr[5];
+            for (int i=0; i<=4; i++){
+                cin>>arr[i];
+            }
+            for (int i=0; i<=4; i++){
+                cout<<arr[i]<<endl;
+            }
+
+// (2D arrays)
+...always goes with reference
+.. syntax: int arr[3][5]
+..structure:
+
+ i=0,1,2,3,4
+i=0[][][][][]
+i=1[][][][][]
+i=2[][][][][]
+
+..if no value is assigned, then garbage value is assigned
+
+// strings
+..to find length (a.size() or a.length() is used)
+..at() usedto access h string using indexing (a.at(0))
+
+// for loops
+    for (int i=1; i<=8; i++){
+        cout<<"yes";
+    }
+
+//while loop
+    int i=1;
+    while(i<=8){
+        cout<<"hello";
+        i++;
+    }
+
+// do-while loop
+runs atleast once...
+.. this prints yes 2 times a mentioned coz condition is true 
+    int i=1;
+    do{
+        cout<<"Yes";
+        i++;
+    } while(i<=2);
+.. this prints yes atleast 1 coz conditon is not true but in do-while it prints atleast once
+    int i=1;
+    do{
+        cout<<"Yes";
+        i++;
+    } while(i<=0);
+
+
+// functions
+... if in any function whic returns value always make sure to write return else it will return any garbage value
+... types:-
+* void -> doesn't return anything
+        void check(string name){
+            cout<<"name";
+        }
+        int main(){
+            string name;
+            cin>>name;
+            check(name);
+            return 0;
+        }
+*return
+*parameterized
+*non-parameterized
+
+// pass by reference
+it means passing the original value, not the duplicate of it
+..this means we are passing the duplicate value..any change in the unction will not reflect in the orginal string
+            void print(string a){
+                cout<<a;
+            }
+            int main(){
+                string a="ac";
+                print(a);
+                cout<<a;
+                return 0;
+            }
+...but here we are passing the original value and the cange made in teh function will reflect tot he orgiinal value also (&a :  means the original variable)
+            void print(string &a){
+                a[0]='b';
+                cout<<a;
+            }
+...arrays are always passe with reference
