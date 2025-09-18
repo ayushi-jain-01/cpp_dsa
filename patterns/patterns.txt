@@ -1,0 +1,31 @@
+//    *        ..3 space 1 star
+//   ***       ..2 space 3 star
+//  *****      ..1 space 5 star
+// *******     ..0 space 7 star
+
+logic: (n-no. or rows:4)
+no. of spaces: n-i
+no.  of stars: 2i-1
+
+
+// *******     --> 0 space 7 stars  row:1
+//  *****      --> 1 space 5 stars  row:2
+//   ***       --> 2 space 3 stars  row:3
+//    *        --> 3 space 1 star   row:4
+
+(1. one way to write this is to mirror or reverse the normal pyramid code or 2. make the formula then do)
+
+logic: (n=total no. of rows, i=no. of rows)
+no. of spaces: i-1
+no. os stars: 2*(n – i + 1) – 1
+
+(another formula is 3. to guess by hw much the space or stars are incrementing or derementing)
+
+-> stars dec by 2
+-> space inc by 1
+int stars = 2*n - 1;  // start with max stars
+int spaces = 0;       // start with 0 spaces
+then update spaces++, stars-=2
+
+
+
