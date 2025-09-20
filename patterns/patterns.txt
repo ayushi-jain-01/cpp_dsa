@@ -27,5 +27,89 @@ int stars = 2*n - 1;  // start with max stars
 int spaces = 0;       // start with 0 spaces
 then update spaces++, stars-=2
 
+// 1
+// 01
+// 101
+// 0101
+// 10101
 
+-> odd rows start with 1 and even with 0
+-> further uses digit flipping logic
+pseudo code:
+if (i%2==0) digit=1 else digit=0... in inside loop cout<<digit; digit = 1-digit;
 
+// 1      1   -> 1+ 6 spaces
+// 12    21   -> 12+ 4 spaces
+// 123  321   -> 123+ 2 spaces
+// 12344321   -> 1234+ 0 spaces
+
+.. first write for first half left part then right
+.. space formula: 2(n-i)
+..divided the code into 3 halves.. first normal pattern then space then backward pyramid
+
+// 1 
+// 2 3
+// 4 5 6
+// 7 8 9 10
+// 11 12 13 14 15
+-> continous number pyramid
+
+//    A      -> 3 spaces -> A
+//   ABA     -> 2 spaces -> AB
+//  ABCBA    -> 1 spaces -> ABC
+// ABCDCBA   -> 0 spaces -> ABCD
+
+..no. of spaces: n-i (n: total no. of rows/i: no. of rows)
+.. in alphabets if we need to decrement then 'E'-i (hs will reduce to whatever the value of i (ex:i=2) 'E'-i = 'C' is the ans as i works on ASCII cde startes from 65 'A':65)
+
+// 5
+// 45
+// 345
+// 2345
+// 12345
+
+..inner loop: 6-i to j<=5
+..outer loop: 1-i++
+
+// **********
+// ****  ****
+// ***    ***
+// **      **
+// *        *
+// *        *
+// **      **
+// ***    ***
+// ****  ****
+// **********
+
+-> if splitted into  upper half
+**********   --> *: 0  space: 0 
+****--****   --> *: 4  space: 2 *: 4
+***----***   --> *: 3  space: 4 *: 3
+**------**   --> *: 2  space: 6 *: 2
+*--------*   --> *: 1  space: 8 *: 1
+
+-> if splitted into lower  half
+*--------*   --> *: 1  space: 8 *: 1
+**------**   --> *: 2  space: 6 *: 2
+***----***   --> *: 3  space: 4 *: 3
+****--****   --> *: 4  space: 2 *: 4
+**********   --> *: 0  space: 0 
+
+// *        *
+// **      **
+// ***    ***
+// ****  ****
+// **********
+// ****  ****
+// ***    ***
+// **      **
+// *        *
+.. same procedure as of above
+
+// ****
+// *  *
+// *  *
+// ****
+
+-> in these pattern execute tthe outer loop ad inner loop using rows and columns
