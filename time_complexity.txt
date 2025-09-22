@@ -1,0 +1,66 @@
+time taken to execute the code is not the time complexity.
+-> then...what?
+the rate  at which the time taken increases wrt the input size.
+
+-> every piece of code takes time in terms of BIG-OH NOTATION -> "0()" ... time taken is written inside parentheses(that is the total no. of steps in which the code is executed)... instead of writing time taken in sec this notation is used 
+
+-> Rules (for computing BIG-OH):
+..computed in terms of worst case scenario
+..avoid constants
+..avoid lower values
+
+like ex:
+for(int i=1;i<=N;i++){
+    cout<<"Yes";
+}
+-> here the code is running in 15 steps a:(N)*3 which is...."0(a)"
+
+-> cases
+1. best case 
+2. average case :- (best+worst)/2
+3. worst case
+
+ex:
+if(m<25){
+    cout<<"GrdaeD";
+}else if(m<45){
+    cout<<"GradeC";
+}else if(m<65){          
+    cout<<"GradeB";
+}else{
+    cout<<"GradeA";
+}
+
+--> other than BIG-OH.. 2 other notations:
+.. big-oh (worst case complexity and upperbound)
+.. theta:- (average complexity)
+.. omega:- (lowest bound)
+
+TIME COMPLEXITY QUESTIONS:
+
+1.
+for(int i=0;i<N;i++){
+    for(int j=0;j<N;j++){
+        ..
+    }
+}
+
+-> 0(N^^2)
+
+2.
+for(int i=0;i<N;i++){
+    for(int j=0;j<=i;j++){
+        ..
+    }
+}
+
+-> when i=0 j=0
+-> when i=1 j=0,1
+-> when i=2 j=0,1,2 so on..
+therefore, 1+2+3....N
+sum of first n natural no.  is (N*(N+1))/2 or ((N*N/2)+(N/2))
+and N/2 s avoided
+->  0(N*N/2)
+
+
+// SPACE COMPLEXITY (memory space a program takes..)
