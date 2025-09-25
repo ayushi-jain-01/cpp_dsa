@@ -117,3 +117,34 @@ it means passing the original value, not the duplicate of it
                 cout<<a;
             }
 ...arrays are always passe with reference
+
+
+//Armstrong no. 
+**important
+
+-> bits/stdc++.h is sued for all libraries...is this not then cmath library is used for pow module
+-> to_string is used to convert the intteger into the string
+-> since pow function alsso gives the decimal value...to round it off to gte the expected outcome (int)round(pow(digit,d)) is used...
+
+#include <bits/stdc++.h> 
+using namespace std;
+int main(){
+    int num;
+    cin>>num;
+    int sum=0;
+    int d= to_string(num).length();
+    int t=num;
+    while (t>0){
+        int digit=t%10;
+        sum=sum+(int)round(pow(digit,d));
+        t=t/10;
+    }
+    cout<<sum;
+    if (sum==num){
+        cout<<"Yes";
+    }else{
+        cout<<"No";
+    }
+    return 0;
+}
+
